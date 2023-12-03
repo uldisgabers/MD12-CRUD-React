@@ -1,0 +1,49 @@
+{
+  "cars": [
+    {
+      "brand": "VOLVO",
+      "model": "S80",
+      "color": "White",
+      "price": "8000",
+      "createdAt": "2023-11-21T20:31:46.480Z",
+      "img": "volvo.png",
+      "id": 1
+    },
+    {
+      "brand": "FIAT",
+      "model": "Multipla",
+      "color": "Purva-dirsiens",
+      "price": "1",
+      "createdAt": "2023-11-21T20:32:45.273Z",
+      "img": "ford.png",
+      "id": 4
+    },
+    {
+      "brand": "OPEL",
+      "model": "Pirmais",
+      "color": "Jāņunakts",
+      "price": "100",
+      "createdAt": "2023-11-21T20:33:09.626Z",
+      "img": "mercedes.png",
+      "id": 5
+    },
+    {
+      "brand": "AUDI",
+      "model": "123123",
+      "color": "12312",
+      "price": "2113",
+      "createdAt": "2023-11-22T19:47:16.455Z",
+      "img": "audi.png",
+      "id": 6
+    },
+    {
+      "brand": "BMW",
+      "model": "21",
+      "color": "3123",
+      "price": "123123",
+      "createdAt": "2023-11-22T19:47:21.159Z",
+      "img": "toyota.png",
+      "id": 7
+    }
+  ]
+}
