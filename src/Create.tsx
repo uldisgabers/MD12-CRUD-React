@@ -11,7 +11,7 @@ const Create = () => {
     e.preventDefault();
     // const card = { brand, model, color, price };
 
-    axios.post("http://localhost:3004/cars", {
+    axios.post("http://localhost:3001/car", {
         brand: brand,
         model: model,
         color: color,

@@ -1,28 +1,24 @@
 import "./App.css";
-import Card from "./Card";
+import Cards from "./Cards";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Create from "./Create";
 
 function App() {
-
   const [cards, setCards] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3004/cars").then(({ data }) => {
-      setCards(data);
+    axios.get("http://localhost:3001/cars").then(({ data }) => {
+      setCards(data.cars);
     });
   }, []);
 
   return (
     <>
-      <div className="cards">
-        {cards && <Card cards={cards} />}
-      </div>
+      <div className="cards">{cards && <Cards cards={cards} />}</div>
       <div className="add-new-wrapper">
         <Create />
       </div>
-      
     </>
   );
 }

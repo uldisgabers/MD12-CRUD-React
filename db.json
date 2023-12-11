@@ -28,21 +28,21 @@
       "id": 5
     },
     {
-      "brand": "AUDI",
-      "model": "123123",
-      "color": "12312",
-      "price": "2113",
-      "createdAt": "2023-11-22T19:47:16.455Z",
-      "img": "audi.png",
+      "brand": "asdas",
+      "model": "asdasd",
+      "color": "asdasd",
+      "price": "asdasd",
+      "createdAt": "2023-12-08T16:37:34.330Z",
+      "img": "no image",
       "id": 6
     },
     {
-      "brand": "BMW",
-      "model": "21",
-      "color": "3123",
-      "price": "123123",
-      "createdAt": "2023-11-22T19:47:21.159Z",
-      "img": "toyota.png",
+      "brand": "asd",
+      "model": "asd",
+      "color": "asd",
+      "price": "asd",
+      "createdAt": "2023-12-08T16:40:56.773Z",
+      "img": "no image",
       "id": 7
     }
   ]

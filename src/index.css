@@ -171,3 +171,15 @@
   width: 100px;
   align-self: flex-end;
 }
+
+.edit-box {
+  display: block;
+  position: absolute;
+  max-width: 400px;
+  width: 100%;
+  border: 3px solid rgb(165, 165, 165);
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: antiquewhite;
+}
