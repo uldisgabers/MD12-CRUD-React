@@ -1,0 +1,26 @@
+.wrapper {
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.brand {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.model {
+  font-size: 50px;
+  color: gray;
+}
+
+.price {
+  font-size: 35px;
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: 10px;
+}

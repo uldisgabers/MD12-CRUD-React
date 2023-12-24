@@ -1,0 +1,13 @@
+.tittleWrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.img {
+  max-width: 300px;
+}
+
+.title {
+  font-size: 72px;
+}

@@ -1,26 +1,23 @@
-import "./App.css";
-import Cards from "./Cards";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import Create from "./Create";
+import Router from './router/route.tsx'
+import Nav from './components/Nav/Nav.tsx'
 
 function App() {
-  const [cards, setCards] = useState(null);
-
-  useEffect(() => {
-    axios.get("http://localhost:3001/cars").then(({ data }) => {
-      setCards(data.cars);
-    });
-  }, []);
 
   return (
     <>
-      <div className="cards">{cards && <Cards cards={cards} />}</div>
-      <div className="add-new-wrapper">
-        <Create />
-      </div>
+      <Nav />
+      <Router />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
+
+// const [cards, setCards] = useState(null);
+
+// useEffect(() => {
+//   axios.get("http://localhost:3001/cars").then(({ data }) => {
+//     setCards(data.cars);
+//   });
+// }, []);
+// <div className="cards">{cards && <Cards cards={cards} />}</div>
