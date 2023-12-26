@@ -1,59 +1,40 @@
 import { useState } from "react";
 import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
-import { Car } from "./pages/Cars/Cars";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const Create = () => {
+  const queryClient = useQueryClient();
 
-  // const queryClient = new QueryClient();
+  type NewCar = {
+    brand: string;
+    model: string;
+    color: string;
+    price: string;
+  };
 
   const [newCar, setNewCar] = useState({
     brand: "",
     model: "",
     color: "",
     price: "",
-    createdAt: new Date(),
-    img: "img"
   });
 
-  // const handleSubmit = () => {
-  //   // e.preventDefault();
-  //   // const card = { brand, model, color, price };
-
-  //   axios
-  //     .post("http://localhost:3001/car", {
-  //       ...newCar,
-  //       createdAt: new Date(),
-  //       img: "no image",
-  //     })
-  //     .then(() => {
-  //       setNewCar({
-  //         brand: "",
-  //         model: "",
-  //         color: "",
-  //         price: "",
-  //       });
-  //       window.location.reload();
-  //     });
-  // };
-
-  const { mutateAsync: addCar, isPending: addCarLoading } = useMutation({
-    mutationFn: (payload: Car) => {
+  const { mutateAsync: addCar } = useMutation({
+    mutationFn: (payload: NewCar) => {
       return axios.post("http://localhost:3001/car", {
-            ...newCar,
-            createdAt: new Date(),
-            img: "no image",
-          })
-        // payload
-        // ...payload,
-        // createdAt: new Date(),
-        // img: "no image"
-      // });
+        ...payload,
+        createdAt: new Date(),
+        img: "no image",
+      });
     },
     onSuccess: () => {
-      // Invalidate and refetch
-      console.log(payload)
       queryClient.invalidateQueries({ queryKey: ["cars"] });
+      setNewCar({
+        brand: "",
+        model: "",
+        color: "",
+        price: "",
+      });
     },
   });
 
@@ -62,9 +43,10 @@ const Create = () => {
       <h2>Add new</h2>
       <form
         className="input-form"
-        // onSubmit={(e) => {
-        //   addCar(newCar)
-        // }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          addCar(newCar);
+        }}
       >
         <input
           type="text"
@@ -73,7 +55,6 @@ const Create = () => {
           required
           name="brand"
           value={newCar.brand}
-          // onChange={(e) => setBrand(e.target.value)}
           onChange={(e) => {
             setNewCar({ ...newCar, brand: e.target.value });
           }}
@@ -85,7 +66,6 @@ const Create = () => {
           required
           name="model"
           value={newCar.model}
-          // onChange={(e) => setModel(e.target.value)}
           onChange={(e) => {
             setNewCar({ ...newCar, model: e.target.value });
           }}
@@ -97,7 +77,6 @@ const Create = () => {
           required
           name="color"
           value={newCar.color}
-          // onChange={(e) => setColor(e.target.value)}
           onChange={(e) => {
             setNewCar({ ...newCar, color: e.target.value });
           }}
@@ -109,7 +88,6 @@ const Create = () => {
           required
           name="price"
           value={newCar.price}
-          // onChange={(e) => setPrice(e.target.value)}
           onChange={(e) => {
             setNewCar({ ...newCar, price: e.target.value });
           }}
